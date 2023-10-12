@@ -56,8 +56,7 @@ span,
 }
 
 .btn-common {
-  padding: 16px 21px;
-  color: var(--White, #fff);
+  padding: 16px 31px;
   text-align: center;
   font-family: var(--roboto);
   font-size: 16px;
@@ -69,17 +68,29 @@ span,
 }
 
 .sign-in {
-  background: var(--dark-d-2, #8184a1);
+  /* background: var(--dark-d-2, #8184a1); */
+  background: var(--Grad, linear-gradient(135deg, #f761a1 0%, #8c1bab 100%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #f761a1;
+  /* border: 1px solid;
+  border-image: linear-gradient(135deg, #f761a1, #8c1bab) 1;
+  border-image-slice: 2; */
+  border-radius: 5px !important;
 }
 
 .create-account {
   background: var(--Grad, linear-gradient(135deg, #f761a1 0%, #8c1bab 100%));
+  display: none;
 }
 
 .btn-common:hover,
 .btn-common:active,
 .btn-common:focus {
-  color: var(--white, #fff);
+  color: var(--white, #fff) !important;
+  -webkit-text-fill-color: revert;
+  background: var(--Grad, linear-gradient(135deg, #f761a1 0%, #8c1bab 100%));
 }
 
 .mobile-nav {
@@ -528,6 +539,40 @@ footer .footer-categories a {
   line-height: 24px;
 }
 
+.feature-bg {
+  background-image: url("./images/feature-bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hero-spin-container {
+  position: relative;
+}
+
+.hero-spin {
+  background-image: url("./images/spin.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: revert;
+  width: 200px; /* Adjust the width and height as needed */
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: rotate 4s linear infinite;
+  transform-origin: center; /* Set the rotation point to the center of the element */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .header .categories ul {
     display: flex;
@@ -777,5 +822,19 @@ footer .footer-categories a {
 
   .owl-theme .owl-nav [class*="owl-"]:hover {
     background: none !important;
+  }
+
+  .hero-spin {
+    background-image: url("./images/mobile-spin.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: revert;
+    width: 100px; /* Adjust the width and height as needed */
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    animation: rotate 4s linear infinite;
+    transform-origin: center; /* Set the rotation point to the center of the element */
   }
 }
